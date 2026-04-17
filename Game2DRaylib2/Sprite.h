@@ -62,12 +62,12 @@ public:
 class Player : public Sprite
 {
 public:
-    std::function<void(Vector2)> shootLaser;
+    std::function<void(Vector2)> shootLaseer;
 
     Player() = default;
 
     Player(Texture2D texture, Vector2 pos, std::function<void(Vector2)> shootLaser)
-        : Sprite(texture, pos, PLAYER_SPEED, Vector2{ 0, 0 }), shootLaser(shootLaser)
+        : Sprite(texture, pos, PLAYER_SPEED, Vector2{ 0, 0 }), shootLaseer(shootLaser)
 
     {
     }
@@ -83,7 +83,7 @@ public:
 
         if (IsKeyPressed(KEY_SPACE))
         {
-            shootLaser({ pos.x + size.x / 2.0f,  pos.y - 60.f });
+            shootLaseer({ pos.x + size.x / 2.0f,  pos.y - 60.f });
         }
     };
 

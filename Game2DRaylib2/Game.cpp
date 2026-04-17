@@ -30,8 +30,8 @@ Game::~Game()
     UnloadTexture(meteorTex);
     UnloadTexture(starTex);
 
-    //for (auto& tex : explosionFrames)
-      //  UnloadTexture(tex);
+    for (auto& tex : explosionFrames)
+        UnloadTexture(tex);
 
     UnloadFont(font);
 
@@ -103,7 +103,7 @@ void Game::spawnMeteor()
 void Game::shootLaser(Vector2 pos)
 {
     lasers.push_back(Laser(laserTex, pos));
-    PlaySound(laserSound);
+      PlaySound(laserSound);
 }
 
 void Game::drawTime() const
